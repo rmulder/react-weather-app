@@ -4,11 +4,19 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-family: "Poppins", sans-serif;
     }
-    body {
-        margin: 0;
+    #root{
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     h3, p{
         margin:0;
+    }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 `;
 

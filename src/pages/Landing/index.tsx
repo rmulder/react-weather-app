@@ -1,11 +1,14 @@
+import { Fragment } from 'react';
 import * as S from './styles';
+import { Header, Footer } from '../../components';
 
 const Landing: React.FC = () => {
   return (
-    <S.Container>
-      <h3>Weather Application</h3>
-      <p>To be continued...</p>
-    </S.Container>
+    <Fragment>
+      <Header />
+      <S.Container />
+      <Footer />
+    </Fragment>
   );
 };
 
