@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         justify-content: space-between;
     }
+    body{
+        color: white;
+    }
     h3, p{
         margin:0;
     }
