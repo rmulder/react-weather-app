@@ -5,7 +5,7 @@ const Container = styled.div`
   div {
     span {
       margin-right: 5px;
-      &:last-child {
+      &:not(:first-child) {
         background-color: #e0e0e0;
         border-radius: 25px;
         padding: 0 12px;

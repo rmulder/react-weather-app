@@ -1,21 +1,16 @@
 import * as S from './styles';
-import { CountryType } from '../../types';
 
 interface ICardProps {
-  item: CountryType;
-  onClick: (data: CountryType) => void;
+  title: string;
+  subtitle?: string;
 }
 
-const Card: React.FC<ICardProps> = ({ item, onClick }) => {
+const Card: React.FC<ICardProps> = ({ title, subtitle }) => {
   return (
-    <S.Container
-      onClick={() => {
-        onClick(item);
-      }}
-    >
+    <S.Container>
       <div>
-        <span>{item.name}</span>
-        <span>{item.isoCode}</span>
+        <span>{title}</span>
+        {subtitle && <span>{subtitle}</span>}
       </div>
     </S.Container>
   );
