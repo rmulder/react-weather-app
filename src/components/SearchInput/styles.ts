@@ -5,7 +5,6 @@ const Container = styled.div`
   justify-content: center;
   input {
     padding: 8px;
-    font-family: 'Poppins', sans-serif;
     width: 90%;
   }
 `;

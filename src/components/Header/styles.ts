@@ -4,6 +4,7 @@ const Container = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 12px;
   text-align: center;
+  color: white;
   h3 {
     font-weight: 500;
   }

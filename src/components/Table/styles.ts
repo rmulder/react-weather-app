@@ -4,9 +4,11 @@ interface ISpecialRowStyled {
   selected: boolean;
 }
 
+const backdropColor = '#e2e8f0';
+
 const Container = styled.section`
   width: 260px;
-  border: 1px #e2e8f0 solid;
+  border: 1px ${backdropColor} solid;
   color: black;
   max-height: 273px;
 `;
@@ -14,7 +16,8 @@ const Container = styled.section`
 const TableHead = styled.div`
   padding: 12px;
   text-align: center;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid ${backdropColor};
+  background-color: #f7f7f7;
   h4 {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -29,7 +32,7 @@ const SpecialRow = styled.div<ISpecialRowStyled>`
   display: flex;
   transition: ${({ theme }) => theme.transitionTime};
   background-color: ${({ theme, selected }) => (selected ? theme.colors.primary : null)};
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid ${backdropColor};
   &:hover {
     background-color: ${({ selected }) => (!selected ? '#f7f7f7' : null)};
     cursor: ${({ selected }) => (!selected ? 'pointer' : 'auto')};
@@ -48,7 +51,7 @@ const NoResults = styled.div`
 
 const SearchWrapper = styled.div`
   padding: 8px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid ${backdropColor};
 `;
 
 const ContentWrapper = styled.div`
@@ -65,14 +68,13 @@ const AutocompleteWrapper = styled.div`
   justify-content: center;
   input {
     padding: 8px;
-    font-family: 'Poppins', sans-serif;
     width: 90%;
   }
 `;
 
 const Loading = styled.span`
   display: flex;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid ${backdropColor};
   padding: 8px;
 `;
 
