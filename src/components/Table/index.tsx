@@ -1,16 +1,14 @@
 import * as S from './styles';
 import { Card, SearchInput } from '../';
-import PlacesAutocomplete, { geocodeByPlaceId } from 'react-places-autocomplete';
 import { Fragment } from 'react';
 
 interface ITableProps {
-  data?: any[];
+  data: any[];
   title: string;
   onCellClick: (value: any) => void;
   searchInputValue: string;
   onSearchInputChange: (value: string) => void;
   selectedValue?: any;
-  withGoogleAutoComplete?: boolean;
 }
 
 const Table: React.FC<ITableProps> = ({
@@ -20,14 +18,51 @@ const Table: React.FC<ITableProps> = ({
   searchInputValue,
   onSearchInputChange,
   selectedValue,
-  withGoogleAutoComplete,
 }) => {
   return (
     <S.Container>
       <S.TableHead>
         <h4>{title}</h4>
       </S.TableHead>
-      <div>
+      <Fragment>
+        <S.SearchWrapper>
+          <SearchInput
+            value={searchInputValue}
+            onChange={(event) => onSearchInputChange(event.target.value)}
+          />
+        </S.SearchWrapper>
+        <S.ContentWrapper>
+          {data.length <= 250 && data.length !== 0 ? (
+            data.map((item, index) => (
+              <S.SpecialRow
+                key={index}
+                selected={
+                  item.name === selectedValue?.name && item.stateCode === selectedValue?.stateCode
+                }
+                onClick={() => onCellClick(item)}
+              >
+                <Card title={item.name} subtitle={item.isoCode} />
+              </S.SpecialRow>
+            ))
+          ) : (
+            <S.NoResults>
+              <span>
+                {data.length > 250
+                  ? `Too much results. Please narrow your search.`
+                  : 'No results found...'}
+              </span>
+            </S.NoResults>
+          )}
+        </S.ContentWrapper>
+      </Fragment>
+    </S.Container>
+  );
+};
+
+export default Table;
+
+{
+  /* <div>
         {!withGoogleAutoComplete ? (
           <Fragment>
             <S.SearchWrapper>
@@ -37,7 +72,7 @@ const Table: React.FC<ITableProps> = ({
               />
             </S.SearchWrapper>
             <S.ContentWrapper>
-              {(data ? data.length > 0 : null) ? (
+              {data.length <= 250 && data.length !== 0 ? (
                 data?.map((item) => {
                   return (
                     <S.SpecialRow
@@ -51,7 +86,11 @@ const Table: React.FC<ITableProps> = ({
                 })
               ) : (
                 <S.NoResults>
-                  <span>No results found...</span>
+                  <span>
+                    {data.length > 250
+                      ? `Too many cities. Please narrow your search.`
+                      : 'No results found...'}
+                  </span>
                 </S.NoResults>
               )}
             </S.ContentWrapper>
@@ -78,8 +117,7 @@ const Table: React.FC<ITableProps> = ({
                   {suggestions.map((suggestion) => {
                     return (
                       <S.SpecialRow
-                        {...getSuggestionItemProps(suggestion)}
-                        key={suggestion.placeId}
+                        {...(getSuggestionItemProps(suggestion), { key: suggestion.placeId })}
                         selected={suggestion.placeId === selectedValue?.place_id}
                         onClick={async () => {
                           onCellClick(await geocodeByPlaceId(suggestion.placeId));
@@ -94,9 +132,5 @@ const Table: React.FC<ITableProps> = ({
             }}
           </PlacesAutocomplete>
         )}
-      </div>
-    </S.Container>
-  );
-};
-
-export default Table;
+      </div> */
+}

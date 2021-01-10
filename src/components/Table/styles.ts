@@ -4,16 +4,22 @@ interface ISpecialRowStyled {
   selected: boolean;
 }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 260px;
   border: 1px #e2e8f0 solid;
   color: black;
+  max-height: 273px;
 `;
 
 const TableHead = styled.div`
   padding: 12px;
   text-align: center;
   border-bottom: 1px solid #e2e8f0;
+  h4 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 `;
 
 const SpecialRow = styled.div<ISpecialRowStyled>`
@@ -23,11 +29,13 @@ const SpecialRow = styled.div<ISpecialRowStyled>`
   display: flex;
   transition: ${({ theme }) => theme.transitionTime};
   background-color: ${({ theme, selected }) => (selected ? theme.colors.primary : null)};
-
   border-top: 1px solid #e2e8f0;
   &:hover {
     background-color: ${({ selected }) => (!selected ? '#f7f7f7' : null)};
     cursor: ${({ selected }) => (!selected ? 'pointer' : 'auto')};
+  }
+  &:first-child {
+    border: none;
   }
 `;
 
@@ -40,13 +48,15 @@ const NoResults = styled.div`
 
 const SearchWrapper = styled.div`
   padding: 8px;
+  border-bottom: 1px solid #e2e8f0;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  max-height: 205px;
+  max-height: 164px;
   overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 const AutocompleteWrapper = styled.div`
