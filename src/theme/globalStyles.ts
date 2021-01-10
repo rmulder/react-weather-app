@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         justify-content: space-between;
     }
     body{
-        color: white;
+        color: black;
     }
     h3, p{
         margin:0;
@@ -20,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+    }
+    input, button{
+        font-family: "Poppins", sans-serif;
     }
 `;
 
