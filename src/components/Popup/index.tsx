@@ -21,7 +21,7 @@ const Popup: React.FC<IPopupProps> = ({ weather, buttonTitle, onButtonClick }) =
         <S.Overview>
           {weather.weather[0].description.charAt(0).toUpperCase() +
             weather.weather[0].description.slice(1)}
-          <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+          <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
         </S.Overview>
         <p>{`Temperature: ${weather.main.temp} °C, feels like: ${weather.main.feels_like} °C`}</p>
         <p>{`Wind speed: ${weather.wind.speed} 💨`}</p>
