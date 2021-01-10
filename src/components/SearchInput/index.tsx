@@ -9,7 +9,7 @@ interface ISearchInputProps {
 const SearchInput: React.FC<ISearchInputProps> = ({ value, onChange }) => {
   return (
     <S.Container>
-      <input placeholder="Search Countries..." value={value} onChange={onChange}></input>
+      <input placeholder="Search..." value={value} onChange={onChange}></input>
     </S.Container>
   );
 };
