@@ -10,7 +10,7 @@ const Wrapper = styled.button<IWrapperStyled>`
   opacity: ${({ active }) => (active ? 1 : 0.6)};
   padding: 8px 16px;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 1;
   color: white;
   border: none;
@@ -21,6 +21,22 @@ const Wrapper = styled.button<IWrapperStyled>`
     opacity: ${({ active }) => (!active ? '0.8' : null)};
   }
   transition: ${({ theme }) => theme.transitionTime};
+  pointer-events: ${({ active }) => (active ? 'none' : 'all')};
 `;
 
-export { Wrapper };
+const IconWrapper = styled.button`
+  background-color: ${({ theme }) => theme.colors.secondary};
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  &:hover {
+    opacity: 0.8;
+    background: ${({ theme }) => theme.colors.primary};
+  }
+  transition: ${({ theme }) => theme.transitionTime};
+`;
+
+export { Wrapper, IconWrapper };
