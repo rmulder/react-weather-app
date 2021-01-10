@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Weather Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This weather application was created for Virtustream coding challenge. You can access the hosted website by clicking [here](http://stumbra.github.io/react-weather-app).
 
-## Available Scripts
+For further notice, I will try to fully switch to *Google Places API* for fetching countries, cities and etc., because using the *country-state-city* package feels redundant and increases the bundle size too much then I would like to. Also, I will might integrate [Next.js](https://nextjs.org/) to this project to increase the performance of the application.
 
-In the project directory, you can run:
+## Summary
 
-### `yarn start`
+  - [Getting Started](#getting-started)
+  - [Built With](#built-with)
+  - [Contributing](#contributing)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+These instructions will get you a copy of the project up and running on
+your local machine for development and testing purposes.
 
-### `yarn test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What things you need to install the software:
 
-### `yarn build`
+1) You have to install [node](https://nodejs.org/en/) on your machine;
+2) Install a package manager, [npm](https://docs.npmjs.com/about-npm) or [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) would be great choices.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*That should be enough, I will update prerequisites if something is missing.*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Start-up
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now for running the project on your on machine:
 
-### `yarn eject`
+1) Firstly, execute `npm i` or `yarn` in the command line to download all of the dependencies;
+2) Secondly, just type `npm run start` or `yarn start` to launch the project and open a new browser tab.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+You can now use the application in your browser. If you want to use your own API keys for [Google Maps](https://console.developers.google.com/) or [OpenWeatherMap](https://openweathermap.org/api) click on the links to see how to update them.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - [Create-React-App](https://reactjs.org/docs/create-a-new-react-app.html);
+  - [Typescript](https://www.typescriptlang.org/);
+  - [Styled-Components](https://styled-components.com/);
+  - [Country-State-City](https://www.npmjs.com/package/country-state-city);
+  - [Google-Maps](https://www.npmjs.com/package/@react-google-maps/api);
+  - [Moment.js](https://www.npmjs.com/package/moment);
+  - [Axios](https://www.npmjs.com/package/axios);
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you have any suggestions on how this application could be more efficient - please create an issue or simply DM me privately.
