@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
+const breakpoint1 = '1026px';
+const breakpoint2 = '761px';
+
 const Container = styled.main`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   h4 {
     color: black;
     text-align: center;
@@ -13,10 +18,11 @@ const Container = styled.main`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0.75rem;
   align-items: center;
+  margin: 10px 0px;
   button {
     margin: 0.3rem;
+    height: 30px;
   }
 `;
 
@@ -26,12 +32,12 @@ const TableWrapper = styled.div`
   margin-left: 16px;
   margin-right: 16px;
   justify-content: space-between;
-  @media (max-width: 1026px) {
+  @media (max-width: ${breakpoint1}) {
     flex-direction: row;
     width: 70vw;
     margin-bottom: 16px;
   }
-  @media (max-width: 761px) {
+  @media (max-width: ${breakpoint2}) {
     flex-direction: column;
     align-items: center;
     section {
@@ -50,13 +56,27 @@ const MainSectionWrapper = styled.div`
 
 const MapWrapper = styled.div`
   margin-right: 16px;
-  @media (max-width: 1026px) {
+  @media (max-width: ${breakpoint1}) {
     margin-right: 0;
     margin-bottom: 16px;
   }
-  @media (max-width: 761px) {
+  @media (max-width: ${breakpoint2}) {
     margin-top: 16px;
   }
 `;
 
-export { Container, ButtonWrapper, TableWrapper, MainSectionWrapper, MapWrapper };
+const FavoriteCityListWrapper = styled.div`
+  max-width: 70vw;
+  margin-bottom: 16px;
+  align-self: center;
+  min-width: 200px;
+`;
+
+export {
+  Container,
+  ButtonWrapper,
+  TableWrapper,
+  MainSectionWrapper,
+  MapWrapper,
+  FavoriteCityListWrapper,
+};
