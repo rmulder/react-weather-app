@@ -40,7 +40,6 @@ You can now use the application in your browser. If you want to use your own API
   - [Styled-Components](https://styled-components.com/);
   - [Country-State-City](https://www.npmjs.com/package/country-state-city);
   - [Google-Maps](https://www.npmjs.com/package/@react-google-maps/api);
-  - [Moment.js](https://www.npmjs.com/package/moment);
   - [Axios](https://www.npmjs.com/package/axios);
 
 ## Contributing
